@@ -28,10 +28,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements_dev.txt
         pip install -e ./
-    - name: Lint with flake8
+    - name: style test
       run: |
         # stop the build if there are Python syntax errors or undefined names
         make style_test
-    - name: Test with pytest
+    - name: test
       run: |
         make test

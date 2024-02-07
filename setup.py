@@ -8,7 +8,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = []
+requirements = [ 'pyyaml>=5.1.2' ]
 
 setup(
     author="dem4ply",
@@ -19,6 +19,7 @@ setup(
         'License :: Public Domain',
         'Natural Language :: English',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.8',
     ],
     description="small lib to proccess the keys of the dict like attributes",
