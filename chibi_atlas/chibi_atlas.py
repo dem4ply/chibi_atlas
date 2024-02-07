@@ -110,12 +110,12 @@ class __Chibi_atlas_list( list ):
 
 
 def _wrap( val, klass=None ):
-    if type( val ) == dict:
+    if type( val ) is dict:
         if klass is None:
             return Chibi_atlas( val )
         else:
             return klass( val )
-    elif type( val ) == list:
+    elif type( val ) is list:
         if klass is None:
             return __Chibi_atlas_list( val )
         else:

@@ -123,18 +123,18 @@ class Test_flip_tree( TestCase ):
         result = build_tree(
             *self.level_3, key=self.key_funtion, children=self.child_funtion )
 
-        l = self.level_3
+        level = self.level_3
         batches = result.dependencies_batches()
-        self.assertIn( l[0].children[0].children[0], batches[0] )
-        self.assertIn( l[1].children[1].children[0], batches[0] )
-        self.assertIn( l[1].children[1].children[1], batches[0] )
-        self.assertIn( l[1].children[1].children[2], batches[0] )
-        self.assertIn( l[2], batches[0] )
+        self.assertIn( level[0].children[0].children[0], batches[0] )
+        self.assertIn( level[1].children[1].children[0], batches[0] )
+        self.assertIn( level[1].children[1].children[1], batches[0] )
+        self.assertIn( level[1].children[1].children[2], batches[0] )
+        self.assertIn( level[2], batches[0] )
 
-        self.assertIn( l[1].children[0], batches[0] )
+        self.assertIn( level[1].children[0], batches[0] )
 
-        self.assertIn( l[0].children[0], batches[1] )
-        self.assertIn( l[1].children[1], batches[1] )
+        self.assertIn( level[0].children[0], batches[1] )
+        self.assertIn( level[1].children[1], batches[1] )
 
-        self.assertIn( l[0], batches[2] )
-        self.assertIn( l[1], batches[2] )
+        self.assertIn( level[0], batches[2] )
+        self.assertIn( level[1], batches[2] )
