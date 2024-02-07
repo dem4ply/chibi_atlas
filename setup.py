@@ -30,6 +30,6 @@ setup(
     name='chibi_atlas',
     packages=find_packages(include=['chibi_atlas', 'chibi_atlas.*']),
     url='https://github.com/dem4ply/chibi_atlas',
-    version='version='0.0.1'',
+    version='1.0.0',
     zip_safe=False,
 )
