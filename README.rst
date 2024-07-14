@@ -51,9 +51,6 @@ de los dicionarios
 	c[ 'a' ] = 'c'
 	assert { 'a': [ 'a', 'b', 'c', ] } == c
 
-* Free software: WTFPL
-* Documentation: https://chibi-atlas.readthedocs.io.
-
 
 **********
 Chibi_tree
@@ -62,7 +59,5 @@ Chibi_tree
 no recuerdo porque hice esta cosa pero funciona como un arbol con atributos
 
 
-Features
---------
-
-* TODO
+* Free software: WTFPL
+* Documentation: https://chibi-atlas.readthedocs.io.
