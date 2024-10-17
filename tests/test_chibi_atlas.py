@@ -3,6 +3,7 @@
 from unittest import TestCase
 
 from chibi_atlas import Chibi_atlas
+from chibi_atlas import Chibi_atlas_list
 
 
 class Test_chibi_atlas( TestCase ):
@@ -88,3 +89,12 @@ class Test_chibi_atlas_deeper_with_list( TestCase ):
         self.assertIsInstance( self.d.level[0], Chibi_atlas )
         self.assertIsInstance( self.d.level[1], Chibi_atlas )
         self.assertIsInstance( self.d.level[1].a[0], Chibi_atlas )
+
+
+class Test_chibi_atlas_list( TestCase ):
+    def test_multi_append_should_add_all_items( self ):
+        l = Chibi_atlas_list()
+        l.append( 'a', 'b', 'c' )
+        result = "".join( map( str, l ) )
+        expected = "abc"
+        self.assertEqual( result, expected )

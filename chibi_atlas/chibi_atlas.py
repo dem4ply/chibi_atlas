@@ -95,7 +95,7 @@ class Chibi_atlas_default( defaultdict, Chibi_atlas ):
         super().__init__( default_factory, *args, **kw )
 
 
-class __Chibi_atlas_list( list ):
+class Chibi_atlas_list( list ):
     def __getitem__( self, index ):
         value = super().__getitem__( index, )
         value = _wrap( value )
@@ -108,6 +108,10 @@ class __Chibi_atlas_list( list ):
             self[ i ] = value
             yield value
 
+    def append( self, *items ):
+        for item in items:
+            super().append( item )
+
 
 def _wrap( val, klass=None ):
     if type( val ) is dict:
@@ -117,7 +121,7 @@ def _wrap( val, klass=None ):
             return klass( val )
     elif type( val ) is list:
         if klass is None:
-            return __Chibi_atlas_list( val )
+            return Chibi_atlas_list( val )
         else:
             return klass( val )
     return val
@@ -128,4 +132,4 @@ yaml.add_representer(
 
 
 yaml.add_representer(
-    __Chibi_atlas_list, yaml.representer.SafeRepresenter.represent_list )
+    Chibi_atlas_list, yaml.representer.SafeRepresenter.represent_list )
